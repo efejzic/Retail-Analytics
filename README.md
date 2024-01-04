@@ -12,7 +12,12 @@ Source: https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-tren
 
 _What strategy do you recommend the store puts in place to attract more female customers?_
 
-Ratio of 68:32
+Male and Female Comparison
 
 ![Screenshot 2024-01-03 192845](https://github.com/efejzic/Retail-Analytics/assets/119814593/f904bc69-9f75-4bf4-8b33-07664d993bcd)
+
+Ratio of 68:32
+
+![Screenshot 2024-01-03 201057](https://github.com/efejzic/Retail-Analytics/assets/119814593/f4bac223-0a24-4882-a0a9-a65d7cfd20ba)
+
 
