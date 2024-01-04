@@ -18,6 +18,7 @@ Male and Female Comparison
 
 Ratio of 68:32
 
-![Screenshot 2024-01-03 201057](https://github.com/efejzic/Retail-Analytics/assets/119814593/f4bac223-0a24-4882-a0a9-a65d7cfd20ba)
+![Screenshot 2024-01-03 201449](https://github.com/efejzic/Retail-Analytics/assets/119814593/8d450f08-e464-4b55-8831-d3dd574023e6)
+
 
 
