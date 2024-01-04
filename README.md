@@ -14,4 +14,5 @@ _What strategy do you recommend the store puts in place to attract more female c
 
 Ratio of 68:32
 
-![Screenshot 2024-01-03 184319](https://github.com/efejzic/Retail-Analytics/assets/119814593/65e80605-f9d3-4b25-bed1-9687a0d3f247)
+![Screenshot 2024-01-03 192845](https://github.com/efejzic/Retail-Analytics/assets/119814593/f904bc69-9f75-4bf4-8b33-07664d993bcd)
+
