@@ -2,12 +2,18 @@ Data Analysis
 
 -- Gender and client count
 
-select
-Gender,
-COUNT([Customer_ID]) as client_count
-FROM
-[dbo].[shopping_trends_updated]
-Group By
-Gender 
-Order By
-client_count DESC;
+with total as (
+	select
+		Gender,
+		COUNT([Customer_ID]) as client_count
+	FROM
+		[dbo].[shopping_trends_updated]
+	Group By
+		Gender 
+)
+	select 
+		*
+	from 
+		total
+	order by
+		client_count DESC;
