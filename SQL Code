@@ -2,18 +2,24 @@ Data Analysis
 
 -- Gender and client count
 
-with total as (
-	select
-		Gender,
-		COUNT([Customer_ID]) as client_count
-	FROM
-		[dbo].[shopping_trends_updated]
-	Group By
-		Gender 
+WITH total AS (
+    SELECT
+        Gender,
+        COUNT([Customer_ID]) AS client_count
+    FROM
+        [dbo].[shopping_trends_updated]
+    GROUP BY
+        Gender 
 )
-	select 
-		*
-	from 
-		total
-	order by
-		client_count DESC;
+
+-- Male and female percentage
+
+SELECT 
+    SUM(CASE WHEN Gender = 'Male' THEN client_count ELSE 0 END) AS count_male,
+    SUM(CASE WHEN Gender = 'Female' THEN client_count ELSE 0 END) AS count_female,
+    (SUM(CASE WHEN Gender = 'Male' THEN client_count ELSE 0 END) * 100.0) /
+        (SUM(CASE WHEN Gender = 'Male' THEN client_count ELSE 0 END) + SUM(CASE WHEN Gender = 'Female' THEN client_count ELSE 0 END)) AS pct_male,
+    (SUM(CASE WHEN Gender = 'Female' THEN client_count ELSE 0 END) * 100.0) /
+        (SUM(CASE WHEN Gender = 'Male' THEN client_count ELSE 0 END) + SUM(CASE WHEN Gender = 'Female' THEN client_count ELSE 0 END)) AS pct_female
+FROM 
+    total;
