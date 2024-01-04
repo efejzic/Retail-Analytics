@@ -11,6 +11,7 @@ WITH total AS (
     GROUP BY
         Gender 
 )
+
 -- Male and female percentage
 
 SELECT 
@@ -70,6 +71,7 @@ ORDER BY
     purchase_count DESC;
 
 --Which season has the most purchases?
+
 SELECT
     Season,
     COUNT(Customer_ID) as purchase_count
@@ -103,7 +105,6 @@ GROUP BY
     "Shipping_Type"
 ORDER BY
     purchase_count DESC;
-
 
 --What is the most popular age group served?
 --Find the most purchased item by that age group.
