@@ -24,6 +24,7 @@ FROM
     total;
 
 --What female age group do we mostly serve?
+
 SELECT TOP 10
     CASE
         WHEN Age BETWEEN 18 AND 31 THEN '18-31'
@@ -43,3 +44,115 @@ GROUP BY
     END
 ORDER BY
     client_count DESC;
+
+--What is the most and least popular category?
+
+SELECT 
+    category,
+    COUNT(Customer_ID) as client_count
+FROM
+    [dbo].[shopping_trends_updated]
+GROUP BY
+    category
+ORDER BY
+    client_count DESC;
+
+--Most popular item
+
+SELECT TOP 20
+    "Item_Purchased",
+    COUNT(Customer_ID) as purchase_count
+FROM
+    [dbo].[shopping_trends_updated]
+GROUP BY
+    "Item_Purchased"
+ORDER BY
+    purchase_count DESC;
+
+--Which season has the most purchases?
+SELECT
+    Season,
+    COUNT(Customer_ID) as purchase_count
+FROM
+    [dbo].[shopping_trends_updated]
+GROUP BY
+    Season
+ORDER BY
+    purchase_count DESC;
+
+--Most popular payment method
+
+SELECT
+    "Payment_Method",
+    COUNT(Customer_ID) as purchase_count
+FROM
+    [dbo].[shopping_trends_updated]
+GROUP BY
+    "Payment_Method"
+ORDER BY
+    purchase_count DESC;
+
+--Most popular shopping type
+
+SELECT
+    "Shipping_Type",
+    COUNT(Customer_ID) as purchase_count
+FROM
+    [dbo].[shopping_trends_updated]
+GROUP BY
+    "Shipping_Type"
+ORDER BY
+    purchase_count DESC;
+
+
+--What is the most popular age group served?
+--Find the most purchased item by that age group.
+
+SELECT
+    CASE
+        WHEN Age BETWEEN 18 AND 31 THEN '18-31'
+        WHEN Age BETWEEN 32 AND 45 THEN '32-45'
+        WHEN Age BETWEEN 46 AND 59 THEN '46-59'
+        WHEN Age BETWEEN 60 AND 70 THEN '60-70'
+    END AS age_groups,
+    "Item_Purchased",
+    COUNT(Customer_ID) as client_count
+FROM
+    [dbo].[shopping_trends_updated]
+GROUP BY
+    CASE
+        WHEN Age BETWEEN 18 AND 31 THEN '18-31'
+        WHEN Age BETWEEN 32 AND 45 THEN '32-45'
+        WHEN Age BETWEEN 46 AND 59 THEN '46-59'
+        WHEN Age BETWEEN 60 AND 70 THEN '60-70'
+    END,
+    "Item_Purchased"  
+ORDER BY
+    client_count DESC;
+
+--Most popular age group served
+--Find the most common payment method used by the most popular age group
+
+SELECT
+    CASE
+        WHEN Age BETWEEN 18 AND 31 THEN '18-31'
+        WHEN Age BETWEEN 32 AND 45 THEN '32-45'
+        WHEN Age BETWEEN 46 AND 59 THEN '46-59'
+        WHEN Age BETWEEN 60 AND 70 THEN '60-70'
+    END AS age_groups,
+    "Payment_Method",
+    COUNT(Customer_ID) as no_clients
+FROM
+    [dbo].[shopping_trends_updated]
+WHERE
+    Age BETWEEN 46 AND 59
+GROUP BY
+    CASE
+        WHEN Age BETWEEN 18 AND 31 THEN '18-31'
+        WHEN Age BETWEEN 32 AND 45 THEN '32-45'
+        WHEN Age BETWEEN 46 AND 59 THEN '46-59'
+        WHEN Age BETWEEN 60 AND 70 THEN '60-70'
+    END,
+    "Payment_Method"
+ORDER BY
+    no_clients DESC;
