@@ -71,9 +71,3 @@ Males shop at a higher rate than females with a ratio of 68:32. After analyzing 
 Our original question asked _what strategy do you recommend the store puts in place to attract more female customers?_ Purchasing patterns indicate that women aged (46-59) shop the most often. Analyzing the customer shopping preferences dataset has led the company to several conclusions to implement in a new marketing campaign.
 
 〰️ Launch a spring sale online and in-store for products such as shoes and accessories. Spring is the most popular season for shopping and paypal is the payment method used most frequently. An online sale will attract customers and free shipping will encourage more purchases. 
-
-〰️
-
-〰️
-
-〰️
